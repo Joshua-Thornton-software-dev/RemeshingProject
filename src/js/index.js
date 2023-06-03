@@ -1,7 +1,7 @@
 
 const STL_IMPORT_ID = "stlInput-import";
-const STAGE_URL = "https://2xb9ejsu5a.execute-api.us-east-2.amazonaws.com/Staging";
-const REMESH_URL = STAGE_URL + "/smoothMesh";
+const STAGE_URL = "https://r1uzd4ndx5.execute-api.us-east-2.amazonaws.com/dev";
+const REMESH_URL = STAGE_URL + "/getnurbs";
 
 let stl_raw = null;
 let stl_smoothed = null;
@@ -35,7 +35,7 @@ function importSTL() {
 
 function importChanged(e) {
     let selectedFile = stlInput.files[0];
-    console.debug(selectedFile);
+    //console.debug(selectedFile);
     fileNameP.innerText = selectedFile.name;
 
     if (!selectedFile.name.toLowerCase().endsWith(".stl")) {
@@ -48,12 +48,12 @@ function importChanged(e) {
 
 function getNURBsFromSTL(stlFile) {
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: REMESH_URL,
-        headers: {
-            stlFile: JSON.stringify(stlFile)
-        },
-        "Access-Control-Allow-Origin": "*",
+        headers: {},
+        data : JSON.stringify({
+            "stlFile": "empty"
+        }),
         success: function(res) {
             alert("success!");
         },
