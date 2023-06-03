@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="src/css/index.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="src/js/index.js"></script>
+<body>
+    <h1>Novineer Interview Project</h1>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <div class="uploadSection">
+        <button type="button" onclick="importSTL()">Import STL file</button>
+        <p id="fileName" style="margin-left: 2.5%;">No file selected.</p>
+        <div id="inputContainer"></div>
+    </div>
+    <div class="badFileSection" id="badFileSection" style="display: none;">
+        <p id="badFileError">The selected file must have the /'.stl/' extension.</p>
+    </div>
+
+    <br/>
+    <br/>
+
+    <button class="displayImg-btn" type="button" onclick="displayImage()">Display 2D NURBS</button>
+    <br/>
+    <img class="NURBS-img" src="src/resources/defaultImg.png" id="nurbsImg"/>
+</body>
+</html>
