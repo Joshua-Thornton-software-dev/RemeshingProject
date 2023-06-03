@@ -1,0 +1,16 @@
+
+.uploadSection {
+    display: flex;
+    height: 25px;
+    align-items: center;
+}
+
+/* .displayImg-btn {
+    width: 23%;
+} */
+
+.NURBS-img {
+    min-width: 235px;
+    max-width: 25%;
+    margin-top: 20px;
+}
